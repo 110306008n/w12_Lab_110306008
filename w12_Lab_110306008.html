@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>110306008_Lab11</title>
+    <style>
+        .border{
+            border: 2px rgb(109, 109, 255) solid;
+            background-color: rgba(79, 245, 245, 0.808);
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="border">
+        <center>
+            JS caculator<br>
+            <label>num1
+                <input name="num1" type="text" id="num1"><br>
+            </label>
+            <label>num2
+                <input name="num2" type="text" id="num2"><br>
+            </label>
+            <label>run
+                <select id="0">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                </select>
+            </label><br>
+            <button onclick="a()">add</button>
+            <p id="result"></p>
+        </center>
+            <script>
+                function start(){
+                a();
+                }
+
+                function a(){
+                var n1=0;
+                var num1=document.getElementById("num1").value;
+                n1=parseInt(num1);
+                var n2;
+                var num2=document.getElementById("num2").value;
+                n2=parseInt(num2);
+                f(n1,n2,document.getElementById(0).value);
+                }
+
+                function f(a,b,c){
+                    if(c=="+"){
+                        add(a+b);
+                    }else if(c=="-"){
+                        add(a-b);
+                    }else if(c=="*"){
+                        add(a*b);
+                    }else if(c=="/"){
+                        add(a/b);
+                    }
+                }
+                function add(c) {
+                    document.getElementById("result").innerHTML="result: "+c;
+                } 
+            </script>
+    </div>
+</body>
+</html>
